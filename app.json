@@ -1,6 +1,6 @@
 {
-  "name": "OneSearch",
-  "description": "",
+  "name": "UDOIT",
+  "description": "The Universal Design Online content Inspection Tool, or UDOIT identifies and fixes accessibility issues in Canvas by Instructure.",
   "keywords": [
     "education",
     "canvas",
@@ -8,56 +8,51 @@
     "EDU",
     "UCF",
     "Instructure",
-    "Library"
+    "508"
   ],
-  "website": "https://online.ucf.edu/support/webcourses/integrations/",
-  "repository": "https://github.com/ssilverm/testappjson",
+  "website": "http://online.ucf.edu/teach-online/resources/udoit/",
+  "repository": "https://github.com/ucfcdl/UDOIT",
   "success_url": "/",
   "env": {
-    "LIBRARY_USERNAME": {
-      "description": "EBSCO Username",
-      
-    },
-    "LIBRARY_PASSWORD": {
-      "description": "EBSCO Password",
-      
-    },
-    "LIBRARY_PROFILE": {
-      "description": "EBSCO Profile",
-      
-    },
     "CONSUMER_KEY": {
-      "description": "LTI consumer key entered when adding Onesearch LTI to Canvas",
-      
+      "description": "LTI consumer key entered when adding UDOIT LTI to Canvas",
+      "generator": "secret"
     },
-    "LTI_SECRET": {
-      "description": "LTI secret entered when adding Onesearch LTI to Canvas",
-      
+    "SHARED_SECRET": {
+      "description": "LTI secret entered when adding UDOIT LTI to Canvas",
+      "generator": "secret"
     },
-    "SECRET_KEY": {
-      "description": "FLASK SECRET",
-      
+    "OAUTH2_ID": {
+      "description": "Oauth ID from the developer api key created by your admin"
     },
-    "TITLE": {
-      "description": "App Title",
-      
+    "OAUTH2_KEY": {
+      "description": "Oauth Key from the developer api key created by your admin"
     },
-    "DESCRIPTION": {
-      "description": "App Description",
-      
+    "OAUTH2_URI": {
+      "description": "Full url to your oauth2responce.php file",
+      "value": "https://your.herokuapp.com/oauth2response.php"
     },
-    "ICON": {
-      "description": "App Icon",
-      
+    "GOOGLE_API_KEY": {
+      "description": "add a google api key for youtube video support",
+      "required": false
     },
     "USE_HEROKU_CONFIG": {
       "description": "needed to use the Heroku configuration",
       "value": "true"
     }
   },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-python"
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
     }
   ],
+  "scripts": {
+    "postdeploy": "php db_pg_setup.php"
+  }
 }

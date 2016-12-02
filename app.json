@@ -1,0 +1,63 @@
+{
+  "name": "OneSearch",
+  "description": "",
+  "keywords": [
+    "education",
+    "canvas",
+    "CDL",
+    "EDU",
+    "UCF",
+    "Instructure",
+    "Library"
+  ],
+  "website": "https://online.ucf.edu/support/webcourses/integrations/",
+  "repository": "https://github.com/ssilverm/testappjson",
+  "success_url": "/",
+  "env": {
+    "LIBRARY_USERNAME": {
+      "description": "EBSCO Username",
+      
+    },
+    "LIBRARY_PASSWORD": {
+      "description": "EBSCO Password",
+      
+    },
+    "LIBRARY_PROFILE": {
+      "description": "EBSCO Profile",
+      
+    },
+    "CONSUMER_KEY": {
+      "description": "LTI consumer key entered when adding Onesearch LTI to Canvas",
+      
+    },
+    "LTI_SECRET": {
+      "description": "LTI secret entered when adding Onesearch LTI to Canvas",
+      
+    },
+    "SECRET_KEY": {
+      "description": "FLASK SECRET",
+      
+    },
+    "TITLE": {
+      "description": "App Title",
+      
+    },
+    "DESCRIPTION": {
+      "description": "App Description",
+      
+    },
+    "ICON": {
+      "description": "App Icon",
+      
+    },
+    "USE_HEROKU_CONFIG": {
+      "description": "needed to use the Heroku configuration",
+      "value": "true"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
+  ],
+}

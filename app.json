@@ -11,7 +11,7 @@
 		"Library"
 	],
 	"website": "https://online.ucf.edu/support/webcourses/integrations/",
-	"repository": "https://github.com/ssilverm/testappjson",
+	"repository": "https://github.com/ucfcdl/OneSearch-License/",
 	"success_url": "/",
 	"env": {
 		"LIBRARY_USERNAME": {
